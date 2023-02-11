@@ -1,0 +1,91 @@
+*,::after,::before{
+    box-sizing: border-box;
+    margin:0px
+}
+body{
+   background-color: #f1f1f1;
+   font-family: Raleway, Helvetica ,sans-serif;
+}
+
+.btn-modal{
+    padding:5px;
+    width:80px;
+    font-size:15px;
+    margin:100px auto; 
+    cursor:pointer;
+    display: block;
+    cursor:pointer;
+    position:relative;
+    z-index:1
+}
+.modal-container{
+    width:100vw;
+    height:100vw;
+    position:fixed;
+    top:0px;
+    left:0px;
+    opacity:0;
+    transition : opacity .2s  ease-out
+}
+.modal-container.active{
+    display: block;
+    opacity:1;
+    z-index:2;
+    transition : opacity 0s ease-out
+}
+.overlay{
+    background-color: #333333d3;
+    height:100%;
+    width:100%;
+    position:absolute;
+    opacity:0;
+    transition : opacity .2s .8s ease-out
+}
+.modal-container.active .overlay{
+    opacity:1;
+    transition : opacity .2s  ease-out
+}
+.modal{
+    
+    width:30vw;
+    height:fit-content;
+    background-color: white;
+    box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.243);
+    padding:20px 10px;
+    position:relative;
+    border-radius: 5px;
+    position:absolute;
+    top: 35vh;
+    left:35vw;
+    transform: translateY(0%);
+    transition:transform .2s 0s ease-out;
+   
+}
+.modal-container.active .modal{
+    transform: translateY(-20%);
+    z-index:2
+}
+.modal h2{
+    margin-bottom:5px;
+    font-family: Montserrat , sans-serif;
+    font-weight: 500;
+}
+.modal p{
+    padding:4px 10px;
+    text-align: justify;
+    color:rgb(84, 82, 82);
+    font-size:14px;
+    list-style: none;
+    line-height:1.2
+}
+.close-modal{
+    position:absolute;
+    right:10px;
+    top:10px;
+    padding:3px 8px;
+    font-size: 18px;
+    cursor:pointer;
+    border:none;
+    background-color: #ff365e;
+    color:white
+}
